@@ -18,7 +18,6 @@ var list = jsonraw["data"]
 
 app.post('/downloads', function (req, res) {
 
-    // res.download(__dirname + `/pdf/page${id}.pdf`);
     var files = path.join(__dirname, "/pdf")
     var name = req.body.Name.toString()
     var Fname = req.body["Father Name"].toString()
@@ -30,7 +29,7 @@ app.post('/downloads', function (req, res) {
         }
     }
     if (id != -1) {
-        res.status(200).send(JSON.stringify({ "id": id }))
+        res.download(__dirname + `/pdf/page${id}.pdf`);
     } else {
         res.status(200).send("No file")
     }
