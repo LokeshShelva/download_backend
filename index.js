@@ -34,8 +34,8 @@ app.post('/downloads', function (req, res) {
     }
 });
 
-app.get('/admit/:id', (req, res) => {
-    var id = req.params.id
+app.get('/admit', (req, res) => {
+    var id = req.query.id
     res.download(__dirname + `/pdf/page${id}.pdf`)
 })
 
