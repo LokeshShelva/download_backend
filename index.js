@@ -21,7 +21,7 @@ app.post('/downloads', function (req, res) {
     // res.download(__dirname + `/pdf/page${id}.pdf`);
     var files = path.join(__dirname, "/pdf")
     var name = req.body.Name.toString()
-    var Fname = req.body["Father name"].toString()
+    var Fname = req.body["Father Name"].toString()
     var id = -1
 
     for (var i = 0; i < list.length; i++) {
