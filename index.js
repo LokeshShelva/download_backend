@@ -18,7 +18,6 @@ var list = jsonraw["data"]
 
 app.post('/downloads', function (req, res) {
 
-    var files = path.join(__dirname, "/pdf")
     var name = req.body.Name.toString()
     var Fname = req.body["Father Name"].toString()
     var id = -1
@@ -29,10 +28,15 @@ app.post('/downloads', function (req, res) {
         }
     }
     if (id != -1) {
-        res.download(__dirname + `/pdf/page${id}.pdf`);
+        res.status(200).send(JSON.stringify({ "id": id }))
     } else {
         res.status(200).send("No file")
     }
 });
+
+app.get('/admit/:id', (req, res) => {
+    var id = req.params.id
+    res.download(__dirname + `/pdf/page${id}.pdf`)
+})
 
 app.listen(port, () => console.log("listening.."))
