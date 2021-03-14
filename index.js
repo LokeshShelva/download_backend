@@ -20,18 +20,30 @@ app.post('/downloads', function (req, res) {
 
     var name = req.body.Name.toString()
     var Fname = req.body["Father Name"].toString()
+    var phone = req.body["Phone Number"].toString()
+    var dob = req.body["DOB"].toString()
     var id = -1
 
     for (var i = 0; i < list.length; i++) {
         if (list[i]["Name"] == name && list[i]["Father Name"] == Fname) {
-            id = list[i]["No"]
+            if (list[i]["Phone Number"].includes(phone) || list[i]["DOB"] == dob) {
+                id = list[i]["No"]
+                break
+            }
+        } else if (list[i]["Name"] == name || list[i]["Father Name"] == Fname) {
+            if (list[i]["Phone Number"].includes(phone) || list[i]["DOB"] == dob) {
+                id = list[i]["No"]
+                break
+            }
+        } else {
+            if (list[i]["Phone Number"].includes(phone) && list[i]["DOB"] == dob) {
+                id = list[i]["No"]
+                break
+            }
         }
     }
-    if (id != -1) {
-        res.status(200).send(JSON.stringify({ "id": id }))
-    } else {
-        res.status(200).send("No file")
-    }
+    res.status(200).send(JSON.stringify({ "id": id }))
+
 });
 
 app.get('/admit', (req, res) => {
