@@ -26,17 +26,17 @@ app.post('/downloads', function (req, res) {
 
     for (var i = 0; i < list.length; i++) {
         if (list[i]["Name"] == name && list[i]["Father Name"] == Fname) {
-            if (list[i]["Phone Number"].includes(phone) || list[i]["DOB"] == dob) {
+            if (list[i]["Phone"].includes(phone) || list[i]["DOB"] == dob) {
                 id = list[i]["No"]
                 break
             }
         } else if (list[i]["Name"] == name || list[i]["Father Name"] == Fname) {
-            if (list[i]["Phone Number"].includes(phone) || list[i]["DOB"] == dob) {
+            if (list[i]["Phone"].includes(phone) || list[i]["DOB"] == dob) {
                 id = list[i]["No"]
                 break
             }
         } else {
-            if (list[i]["Phone Number"].includes(phone) && list[i]["DOB"] == dob) {
+            if (list[i]["Phone"].includes(phone) && list[i]["DOB"] == dob) {
                 id = list[i]["No"]
                 break
             }
