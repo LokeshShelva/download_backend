@@ -22,7 +22,10 @@ app.post('/downloads', function (req, res) {
     var Fname = req.body["Father Name"].toString()
     var phone = req.body["Phone Number"].toString()
     var dob = req.body["DOB"].toString()
+    dob = dob.replace(/[/]/g, ".")
     var id = -1
+
+    console.log(name, Fname, phone, dob)
 
     for (var i = 0; i < list.length; i++) {
         if (list[i]["Name"] == name && list[i]["Father Name"] == Fname) {
