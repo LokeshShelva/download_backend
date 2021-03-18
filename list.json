@@ -747,8 +747,13 @@
         },
         {
             "Name": "alhafizm",
-            "Father Name": "mdmogamadou\rfarouk",
-            "No": 75
+            "Father Name": "mdmogamadoufarouk",
+            "No": 75,
+            "DOB": "10.05.2006",
+            "Phone": [
+                "9788898676",
+                "9788898676"
+            ]
         },
         {
             "Name": "aravindanr",
@@ -1040,9 +1045,14 @@
             ]
         },
         {
-            "Name": "balakumaran\raugustin",
+            "Name": "balakumaranaugustin",
             "Father Name": "velmurugan",
-            "No": 105
+            "No": 105,
+            "DOB": "21.12.2005",
+            "Phone": [
+                "6374693721",
+                "6374693721"
+            ]
         },
         {
             "Name": "samirthavarshine",
